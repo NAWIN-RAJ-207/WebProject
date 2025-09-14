@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Crazy Event Planner</title>
+  <style>
+    /* Basic reset */
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial, Helvetica, sans-serif}
+    body{background:#f5f7fb;color:#222;line-height:1.5}
+
+    /* Page layout */
+    header{background:linear-gradient(90deg,#4b79a1,#283e51);color:white;padding:28px 16px}
+    .container{max-width:980px;margin:20px auto;padding:0 16px}
+
+    header .brand{font-size:1.4rem;font-weight:700}
+    header p{opacity:0.9;margin-top:6px}
+
+    /* Hero */
+    .hero{display:flex;gap:20px;align-items:center;justify-content:space-between;padding:18px 0}
+    .hero .intro{flex:1}
+    .hero h1{font-size:1.8rem;margin-bottom:8px}
+    .hero p{color:#333}
+    .cta{background:#ff6b6b;color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+
+    /* Two column layout */
+    .cols{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:18px}
+
+    /* Events list */
+    .card{background:white;border-radius:10px;padding:14px;box-shadow:0 2px 6px rgba(20,20,40,0.06)}
+    .event{border-left:4px solid #4b79a1;padding:12px 12px;margin-bottom:12px}
+    .event h3{font-size:1rem;margin-bottom:6px}
+    .meta{font-size:0.85rem;color:#666}
+
+    /* Sidebar form */
+    label{display:block;font-size:0.9rem;margin-bottom:6px}
+    input[type=text], input[type=date], textarea, select{width:100%;padding:8px;border-radius:6px;border:1px solid #d6d9e6;margin-bottom:10px}
+    button{background:#4b79a1;color:white;padding:10px 12px;border-radius:8px;border:none;cursor:pointer}
+    button.secondary{background:#6c757d}
+
+    /* Footer */
+    footer{color:#556;margin-top:26px;padding:16px 0;text-align:center}
+
+    /* Small screens */
+    @media (max-width:780px){
+      .cols{grid-template-columns:1fr}
+      .hero{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">Crazy Event Planner</div>
+      <p>Plan small events quickly </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="intro">
+        <h1>Create &amp; View Events</h1>
+        <p>List of events and to add new ones.</p>
+      </div>
+      <a class="cta" href="#create">Create Event</a>
+    </section>
+
+    <div class="cols">
+      <!-- LEFT: Event list -->
+      <div>
+        <div class="card">
+          <h2 style="margin-bottom:12px">Upcoming Events</h2>
+
+          <div class="event">
+            <h3>Community Picnic</h3>
+            <div class="meta">Sat, 2025-10-12 • Central Park • Free entry</div>
+            <p style="margin-top:8px;color:#444">Bring a blanket and some snacks. Games and music for families.</p>
+          </div>
+
+          <div class="event">
+            <h3>Startup Meetup</h3>
+            <div class="meta">Thu, 2025-11-05 • CoWork Hub • RSVP</div>
+            <p style="margin-top:8px;color:#444">Networking, lightning talks and coffee. Open to students and founders.</p>
+          </div>
+
+          <div class="event">
+            <h3>Charity Run 5K</h3>
+            <div class="meta">Sun, 2025-12-07 • Riverside • Tickets</div>
+            <p style="margin-top:8px;color:#444">A short run for a good cause. Family-friendly route.</p>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2 style="margin-bottom:8px">Discount and offers</h2>
+          <ul style="padding-left:18px;color:#444">
+            <li>5% discount for college students</li>
+            <li>8% off for online payments</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT: Create event (static form) -->
+      <aside id="create">
+        <div class="card">
+          <h2 style="margin-bottom:12px">Create Event</h2>
+          <form>
+            <label for="title">Event title</label>
+            <input id="title" type="text" placeholder="Eg: Movie Night">
+
+            <label for="date">Date</label>
+            <input id="date" type="date">
+
+            <label for="location">Location</label>
+            <input id="location" type="text" placeholder="Venue or address">
+
+            <label for="type">Type</label>
+            <select id="type">
+              <option>Free</option>
+              <option>Paid</option>
+              <option>RSVP</option>
+            </select>
+
+            <label for="desc">Short description</label>
+            <textarea id="desc" rows="4" placeholder="Describe the event"></textarea>
+
+            <button type="button">Add (demo)</button>
+            <button type="reset" class="secondary" style="margin-left:8px">Reset</button>
+          </form>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3>Contact</h3>
+          <p class="meta">Email: nawin2070@gmail.com</p>
+        </div>
+      </aside>
+
+    </div>
+
+    <footer>
+      Enjoy with ❤️ 
+    </footer>
+  </main>
+</body>
+</html>
